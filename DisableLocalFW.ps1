@@ -5,4 +5,5 @@ Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\Domain
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile' -name "EnableFirewall" -Value 0
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile' -name "EnableFirewall" -Value 0
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+winrm quickconfig -quiet
 Restart-Service -Name mpssvc
